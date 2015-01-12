@@ -6,7 +6,7 @@ My name is Mister DakMan and I am 21 years old.
 My name is Pesho Peshev and I am 55 years old. .-->
 <?php
     $firstName ='Desi';
-    $secondName ='M';
+    $secondName ='Y';
     $age =30;
     $fullName=   $firstName . ' ' .   $secondName;
     //$fullName = "$firstName $lastName";
