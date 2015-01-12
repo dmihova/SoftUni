@@ -1,0 +1,46 @@
+form{
+    width: 435px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+input{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 130px;
+    height: 28px;
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: white;
+}
+
+input:hover{
+    background: #4b4b4b;
+    color: white;
+    cursor: pointer;
+}
+
+textarea{
+    width: 425px;
+    max-width: 425px;
+    max-height: 200px;
+}
+
+p{
+    margin-top: 40px;
+    text-align: center;
+}
+
+span{
+    font-weight: bold;
+}
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue;
+}

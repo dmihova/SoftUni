@@ -1,0 +1,33 @@
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: royalblue;
+}
+
+tr:nth-child(odd) {
+    background-color: gainsboro;
+}
+
+a:hover {
+    color: red;
+}
+
+.details-box {
+    position: absolute;
+    width: 300px;
+    display: none;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 0 0 4px red;
+    padding: 5px;
+}
+.visible {
+    display:block !important;
+}
+
+.details-info {
+    text-decoration: underline;
+    font-weight: bold;
+}

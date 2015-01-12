@@ -1,0 +1,52 @@
+form{
+    width: 720px;
+    margin: 0 auto;
+}
+
+input, label{
+    margin: 4px 0;
+}
+
+#personalInfo input, #personalInfo  label, #other-skills label[for='languages']{
+    display: block;
+}
+
+#personalInfo input[type='radio']{
+    display: inline-block;
+}
+
+#personalInfo label[for="female"], #personalInfo  label[for="male"]{
+    display: inline-block;
+}
+
+#comp-skills label{
+    display: block;
+}
+
+#license{
+    display: inline-block;
+}
+
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table{
+    margin: 0 auto;
+    margin-bottom: 1.5%;
+}
+
+.innerTable{
+    margin: 0;
+}
+
+td, th{
+    padding: 3px 5px;
+}
+
+h1{
+    font-size: 48px;
+    text-align: center;
+    margin: 0.5% 0;
+}
