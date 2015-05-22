@@ -13,9 +13,12 @@ body {
 
 }
 #wrapper {
-	width: 80rem;
-	font-size: 1.3rem;
+	width: 100%;
+	font-size: 1.1rem;
 
+}
+#content {
+	width: 80%;
 }
 
 footer,.authHeader {
@@ -36,20 +39,46 @@ footer {
 
 }
 .authHeader{
-
 	position: relative;
 	z-index: 10000;
 
 }
 
-.authentication,.login,.register {
+.authentication, .login,.register {
     display:inline-block;
-	vertical-align:baseline
+	vertical-align:baseline;
+
+}
+.authentication {
+	position:relative;
+	width:80%;
+	margin-top: 5%;
+	margin-left: 5%;
+	background: none repeat scroll 0% 0% rgba(58, 67, 101, 0.7);
 }
  .login,.register {
-		border: solid;
-	 	border-width: thin;
+	     border: solid;
+	 	 border-width: thin;
+	 	 height:60%;
+		 margin-top:5%;
+	 	 margin-bottom: 5%;
+		 margin-left: 5%;
+		 background: none repeat scroll 0% 0% rgba(36, 54, 101, 0.7);
+	 	 line-height:1.5rem;}
+
+.register .r_label {
+	width: 40%;
+	float: left;
+	margin-right: 0.5em;
 }
+.login{
+	width:30%;
+}
+ .register {
+	 width:50%;
+ }
+
+
 .container {
 	padding-right: 15px;
 	padding-left: 15px;

@@ -3,17 +3,24 @@ var app = angular.module('socialNetwork', [ 'ngRoute','ngResource']);
 
 app.constant({
     'BASE_URL':'http://softuni-social-network.azurewebsites.net/api/',
+
     'PAGE_SIZE': 5
   });
 
 
-app.config(function($routeProvider ) {
+app.config(function($routeProvider,authenticationService ) {
+
     $routeProvider
 
-        .when('/', {
-            templateUrl: 'templates/authentication.html',
-            controller: 'AuthenticationController'
-        })
+
+        .when('/',
+
+
+            {
+                templateUrl: 'templates/authentication.html',
+                controller:'AuthenticationController'
+            }
+
 
 
 
