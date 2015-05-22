@@ -3,7 +3,7 @@ app.controller('AuthenticationController', function ($scope, $location, authoriz
 
     $scope.register = function () {
 
-        authorizationService.register($scope.registerData)
+        authorizationService.register($scope.user)
             .then(function(data){
                 authorizationService.setCredentials(data);
                 console.log(data)
@@ -15,7 +15,7 @@ app.controller('AuthenticationController', function ($scope, $location, authoriz
 
     $scope.login = function () {
 
-        authorizationService.login($scope.loginData)
+        authorizationService.login($scope.user)
             .then(function(data){
                 authorizationService.setCredentials(data);
                 console.log(data)

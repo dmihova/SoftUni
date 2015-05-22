@@ -1,5 +1,16 @@
-<form action="" ng-controller="AuthenticationController" ng-submit="login()">
-    <input ng-model="loginData.username" value="demi" type="text"  />
-    <input ng-model="loginData.password" value="123123" type="password"  />
-    <input type="submit" value="Login"/>
-</form>
+<div class ="container">
+    <form>
+        <div>
+            <label for="username" >Username:</label>
+            <input type="text" id="username"  ng-model="user.username" required>
+        </div>
+        <div>
+            <label for="password" >Password:</label>
+            <input type="password" id="password"   ng-model="user.password" required>
+        </div>
+        <div>
+            <button class="button" ng-click="login(user)">Login</button>
+        </div>
+
+    </form>
+ </div>
