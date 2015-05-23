@@ -1,0 +1,25 @@
+<header>
+    <p ng-include="'./templates/partial/navbar.html'"></p>
+</header>
+
+
+
+<main>
+
+    <div >
+        <p> News Feed</p>
+    </div>
+
+    <div>
+        <div >
+            <div class="form-group col-md-9">
+                <div ng-include="'templates/partial/wall-posts.html'"  >
+                    <!-- infinite-scroll='loadNewsFeed()' infinite-scroll-disabled='wallBusy' infinite-scroll-distance="0" >-->>
+
+                </div>
+            </div>
+            <div ng-include="'templates/partial/friends-preview.html'"> <!--ng-init="getOwnFriendsListPreview()" -->>
+            </div>
+        </div>
+    </div>
+</main>

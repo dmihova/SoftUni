@@ -1,0 +1,43 @@
+<div class ="box">
+<form class="form-horizontal" >
+
+    <br/>
+       <div >
+            <label for="username"  class = "r_label" >Username:</label>
+            <input type="text" id="username" ng-model="user.username" required>
+       </div>
+       <div>
+            <label for="password"  class = "r_label">Password:</label>
+            <input type="password" id="password"  ng-model="user.password"  ng-minlength="6" ng-maxlength="100"  required>
+
+       </div>
+       <div>
+             <label for="confirm-password" class ="r_label" >Confirm password:</label>
+             <input type="password" id="confirm-password" ng-model="user.confirmPassword" required>
+       </div>
+       <div>
+            <label for="name" class="r_label">Name:</label>
+            <input type="text" id="name"   ng-model="user.name" required>
+
+        </div>
+        <div>
+            <label for="email" class="r_label">Email:</label>
+            <input type="email" id="email"   ng-model="user.email" required>
+
+        </div>
+
+       <div>
+                <label  >Gender:</label>
+                <label for="male">male</label>
+                <input ng-model="user.gender" type="radio" name="gender" id="male" value="male"  ng-value="1"/>
+                <label for="female">female</label>
+                <input ng-model="user.gender"  type="radio" name="gender" id="female" value="female"  ng-value="2"/>
+                <label for="other">other</label>
+                <input ng-model="user.gender"  type="radio" name="gender" id="other" value="other"  ng-value="0"/>
+        </div>
+        <div>
+            <button class="button" ng-click="register(user)">Register</button>
+
+        </div>
+    </form>
+</div>
