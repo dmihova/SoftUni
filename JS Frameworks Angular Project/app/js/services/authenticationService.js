@@ -38,7 +38,7 @@ app.factory('authenticationService',
                 }
             },
 
-             isLoggedIn : function() {
+             isLogged : function() {
                 return sessionStorage['currentUser'] != undefined;
             },
 

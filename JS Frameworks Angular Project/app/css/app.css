@@ -1,15 +1,15 @@
 html, body {
 	border: 0;
+	border: none;
 	margin: 0 auto;
 	padding: 0;
 	display: block;
-
 }
 
 body {
 	font: 12px/1.25 Arial, Helvetica, sans-serif;
 	color: #000000;
-	background-color: rgba(96, 130, 172, 0.38);
+	background-color: rgba(249, 249, 249, 0.38);
 
 }
 #wrapper {
@@ -27,7 +27,7 @@ footer,.authHeader {
 	margin: 0px 0px 0px;
 	overflow: hidden;
 	width: 100%;
-	background: none repeat scroll 0% 0% rgba(78, 58, 101, 0.7);
+	background: none repeat scroll 0% 0% rgba(200, 200, 200, 0.36);
 	height: auto;
 }
 
@@ -44,17 +44,20 @@ footer {
 
 }
 
-.authentication, .login,.register {
+#authentication, .login,.register {
     display:inline-block;
 	vertical-align:baseline;
+	border: 1px solid #9a9a9a;
+	border-radius: 4px;
 
 }
-.authentication {
+#authentication {
 	position:relative;
 	width:80%;
 	margin-top: 5%;
 	margin-left: 5%;
-	background: none repeat scroll 0% 0% rgba(58, 67, 101, 0.7);
+	border:none;
+
 }
  .login,.register {
 	     border: solid;
@@ -63,7 +66,7 @@ footer {
 		 margin-top:5%;
 	 	 margin-bottom: 5%;
 		 margin-left: 5%;
-		 background: none repeat scroll 0% 0% rgba(36, 54, 101, 0.7);
+		 background: none repeat scroll 0% 0% rgba(155, 155, 155, 0.7);
 	 	 line-height:1.5rem;}
 
 .register .r_label {
@@ -79,17 +82,22 @@ footer {
  }
 
 
-.container {
+.box {
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-
-
-
-
+header .navbar {
+	margin: 0 auto;
+	border: none;
+	background: rgba(200, 200, 200, 0.36);;
+	width:100%;
+}
+header .navbar li {
+	margin: 0 2px;
+}
 .even_row {
 	background: red;
 }
