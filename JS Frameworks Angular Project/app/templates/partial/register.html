@@ -3,12 +3,12 @@
 
     <br/>
        <div >
-            <label for="username" class ="r_label">Username:</label>
+            <label for="username"  class = "r_label" >Username:</label>
             <input type="text" id="username" ng-model="user.username" required>
        </div>
        <div>
-            <label for="password" class ="r_label">Password:</label>
-            <input type="password" id="password"  ng-model="user.password" required>
+            <label for="password"  class = "r_label">Password:</label>
+            <input type="password" id="password"  ng-model="user.password"  ng-minlength="6" ng-maxlength="100"  required>
 
        </div>
        <div>
@@ -16,12 +16,12 @@
              <input type="password" id="confirm-password" ng-model="user.confirmPassword" required>
        </div>
        <div>
-            <label for="name" class ="r_label">Name:</label>
+            <label for="name" class="r_label">Name:</label>
             <input type="text" id="name"   ng-model="user.name" required>
 
         </div>
         <div>
-            <label for="email" class ="r_label">Email:</label>
+            <label for="email" class="r_label">Email:</label>
             <input type="email" id="email"   ng-model="user.email" required>
 
         </div>

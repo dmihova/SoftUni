@@ -50,7 +50,14 @@ app.factory('authenticationService',
                 }
                 return headers;
             },
-
+            getAccessToken : function() {
+                var token = "";
+                var currentUser = this.getCurrentUser();
+                if (currentUser) {
+                    token =  currentUser.access_token;
+                }
+                return token;
+            },
             getUserProfile: function(success, error) {
                 var request = {
                     method: 'GET',

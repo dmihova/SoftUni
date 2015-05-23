@@ -1,4 +1,4 @@
-var app = angular.module('socialNetwork', [ 'ngRoute','ngResource']);
+var app = angular.module('socialNetwork', [ 'ngRoute','ngResource','angularSpinner']);
 
 
 app.constant({
@@ -13,33 +13,29 @@ app.config(function($routeProvider  ) {
 
         .when('/',
             {
-                templateUrl: 'templates/loginRegister.html',
-                controller:'LoginRegisterController',
-                resolve:{
-                    isLogged: function($location){
-                        if(localStorage.getItem('accessToken')){
-                            $location.path('/home/');
-                        }
-                    }
-                }
+              templateUrl: 'templates/loginRegister.html',
+               controller:'LoginRegisterController'
             })
+
         .when('/home/',
         {
             templateUrl: 'templates/home.html',
             controller:'HomeController'
         })
 
-
+        .when('/profile/password/',
+            {
+            templateUrl: 'templates/profile-password.html',
+            controller: 'ProfileController'
+            }
+        )
 
 
         .when('/profile/edit', {
             templateUrl: 'templates/edit-profile.html',
             controller: 'ProfileController'
         })
-        .when('/profile/changePassword', {
-            templateUrl: 'templates/change-password.html',
-            controller: 'ProfileController'
-        })
+
         .when('/news', {
             templateUrl: 'templates/news-feed.html',
             controller: 'ProfileController'

@@ -98,6 +98,29 @@ header .navbar {
 header .navbar li {
 	margin: 0 2px;
 }
+
+
+#passwordChangeBox{
+	position:relative;
+	width:50%;
+	margin-top: 5%;
+	margin-left: 25%;
+	border:solid;
+	border-width: thin;
+	font-size: 1.3rem;
+	line-height:1.5rem;
+
+
+
+}
+#passwordChangeBox div {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+}
+
+
+
 .even_row {
 	background: red;
 }
