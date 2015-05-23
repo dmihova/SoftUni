@@ -99,19 +99,17 @@ header .navbar li {
 	margin: 0 2px;
 }
 
-
-#passwordChangeBox{
-	position:relative;
-	width:50%;
-	margin-top: 5%;
-	margin-left: 25%;
+#passwordChangeBox, #detailChangeBox{
 	border:solid;
 	border-width: thin;
 	font-size: 1.3rem;
 	line-height:1.5rem;
-
-
-
+}
+#passwordChangeBox{
+	width:50%;
+	margin-left: 25%;
+	font-size: 1.3rem;
+	line-height:1.5rem;
 }
 #passwordChangeBox div {
 	margin-top: 2rem;
@@ -119,8 +117,41 @@ header .navbar li {
 
 }
 
+#detailChangeBox{
+	position:relative;
+	width:80%;
+	margin-left: 10%;
+	font-size: 1.3rem;
+	line-height:1.5rem;
 
 
+}
+#detailChangeBox div {
+	padding: 0;
+
+}
+
+#image{
+	 width: 200px;
+	 height: 200px;
+}
+
+.profile-image-box img, .cover-image-box img {
+	max-width:128px;
+	max-height:128px;
+	width:auto;
+	height:auto;
+}
+  .cover-image-box img {
+	max-width:500px;
+
+}
+.small-profile-image-box img{
+	max-width:40px;
+	max-height:40px;
+	width:auto;
+	height:auto;
+}
 .even_row {
 	background: red;
 }

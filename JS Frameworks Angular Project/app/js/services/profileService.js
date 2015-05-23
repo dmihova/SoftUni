@@ -14,7 +14,7 @@ app.factory('profileService', function($http, $q, $resource, BASE_URL){
             );
 
        // current user profile get and update
-        profile.me = function(){
+        profile.currentUser = function(){
             return resource.get();
         };
         profile.update = function(data, option1){

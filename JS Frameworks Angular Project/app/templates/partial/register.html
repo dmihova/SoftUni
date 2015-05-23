@@ -29,11 +29,11 @@
        <div>
                 <label  >Gender:</label>
                 <label for="male">male</label>
-                <input ng-model="user.gender" type="radio" name="gender" id="male" value="male"/>
+                <input ng-model="user.gender" type="radio" name="gender" id="male" value="male"  ng-value="1"/>
                 <label for="female">female</label>
-                <input ng-model="user.gender"  type="radio" name="gender" id="female" value="female"/>
+                <input ng-model="user.gender"  type="radio" name="gender" id="female" value="female"  ng-value="2"/>
                 <label for="other">other</label>
-                <input ng-model="user.gender"  type="radio" name="gender" id="other" value="other"/>
+                <input ng-model="user.gender"  type="radio" name="gender" id="other" value="other"  ng-value="0"/>
         </div>
         <div>
             <button class="button" ng-click="register(user)">Register</button>

@@ -1,14 +1,20 @@
-<nav class="navbar navbar-inverse  .navbar.navbar-default.navbar-static-top" >
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand">User info here</a>
-
-        </div>
+<nav class="navbar navbar-inverse .navbar.navbar-default.navbar-static-top" >
+    <div class="container-fluid"  ng-controller= "ProfileController">
 
         <div>
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-init="getProfileDetails()">
                 <li >
-                    <a href="#/home/"><span class="glyphicon glyphicon-home"></span></a>
+                    <div class="small-profile-image-box">
+                        <img ng-src="{{currentUser.profileImageData}}" >
+                    </div>
+                </li>
+                <li >
+                    <a href="#/"><span> {{currentUser.name}} </span></a>
+                </li>
+
+
+                <li >
+                    <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
                 </li>
 
                 <li ng-mouseenter="showRequestFlag=true" ng-mouseleave="showRequestFlag=false">
@@ -18,7 +24,7 @@
                     <div id="friend-requests-box" ng-if="showRequestFlag && pendingRequests.length > 0" class="list-group">
                         <div ng-repeat="request in pendingRequests" class="list-group-item">
                             <a href="#/user/{{request.user.username}}/wall/">
-                                <img ng-src="{{request.user.profileImageData}}" err-src="{{defaultImage}}" alt="picture" style="width: 50px; height: 50px"/>
+                                <img ng-src="{{request.user.profileImageData}}"  alt="picture" style="width: 50px; height: 50px"/>
                                 <span>{{request.user.name}}</span>
                             </a>
                             <button ng-click="acceptFriendRequest(request)" class="btn btn-success btn-sm">accept</button>
@@ -27,13 +33,9 @@
                     </div>
                 </li>
 
-
-
-
-
-                <li><a href="#/editProfile"><span class="glyphicon glyphicon-cog"></span></a></li>
+                <li><a href="#/profile/edit"><span class="glyphicon glyphicon-cog"></span></a></li>
                 <li><a href="#/profile/password/"><span class="glyphicon glyphicon-lock"></span></a></li>
-                <li  ng-controller="LoginRegisterController" id="logout" ><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></a></li>
+                <li  ng-controller= 'MainController'  id="logout" ><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span></a></li>
             </ul>
         </div>
 

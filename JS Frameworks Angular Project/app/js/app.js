@@ -11,31 +11,14 @@ app.config(function($routeProvider  ) {
 
     $routeProvider
 
-        .when('/',
-            {
-              templateUrl: 'templates/loginRegister.html',
-               controller:'LoginRegisterController'
-            })
-
-        .when('/home/',
-        {
-            templateUrl: 'templates/home.html',
-            controller:'HomeController'
-        })
-
-        .when('/profile/password/',
-            {
-            templateUrl: 'templates/profile-password.html',
+        .when('/profile/password/',{
+            templateUrl: 'templates/edit-password.html',
             controller: 'ProfileController'
-            }
-        )
-
-
+        } )
         .when('/profile/edit', {
             templateUrl: 'templates/edit-profile.html',
             controller: 'ProfileController'
         })
-
         .when('/news', {
             templateUrl: 'templates/news-feed.html',
             controller: 'ProfileController'
@@ -45,6 +28,12 @@ app.config(function($routeProvider  ) {
             controller: 'ProfileController'
         })
 
+
+        .when('/',
+        {
+            templateUrl:'templates/home.html',
+            controller:'MainController'
+        })
         .otherwise({redirectTo:'/'})
 
 
