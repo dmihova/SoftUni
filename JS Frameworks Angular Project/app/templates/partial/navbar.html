@@ -24,6 +24,7 @@
                     <div id="friend-requests-box" ng-if="showRequestFlag && requests.length > 0" class="list-group">
                         <div ng-repeat="request in requests" class="list-group-item">
                             <a href="#/users/{{request.user.username}}/">
+
                                 <img ng-src="{{request.user.profileImageData}}"  alt="picture" />
                                 <span>{{request.user.name}}</span>
                             </a>
@@ -46,7 +47,7 @@
 
                     <div ng-if="searchUserResults.length > 0" class="list-group">
                         <div ng-repeat="user in searchUserResults" class="list-group-item">
-                            <a href="#/user/{{user.username}}/">
+                            <a href="#/users/{{user.username}}/">
                                 <img ng-src="{{user.profileImageData}}" alt="picture"  class="small-profile-image-box"/>
                                 <span>{{user.name}}</span>
                             </a>
