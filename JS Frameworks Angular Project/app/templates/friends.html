@@ -1,0 +1,13 @@
+<header header-directive=""></header>
+
+<main ng-controller="FriendController" ng-init="getFriendsByParam()">
+    <div >
+        <h2>
+            Friends ({{friendsData.length}} total)
+        </h2>
+    </div>
+     <div >
+         <div ng-include="'templates/partial/friends-full.html'" >   </div>
+    </div>
+</main>
+

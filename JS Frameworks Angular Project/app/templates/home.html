@@ -18,17 +18,19 @@
 
     <div ng-if="isLogged()">
         <div >
-            <p> News Feed</p>
+            <h1> News Feed</h1>
         </div>
          <div>
             <div >
-                <div class="form-group col-md-9">
-                    <div ng-include="'templates/partial/wall-posts.html'"  >
+                <div>
+                    <div  ng-include="'templates/partial/wall-posts.html'"  >
                         <!-- infinite-scroll='loadNewsFeed()' infinite-scroll-disabled='wallBusy' infinite-scroll-distance="0" >-->>
 
                     </div>
                 </div>
-                <div ng-include="'templates/partial/friends-preview.html'"> <!--ng-init="getOwnFriendsListPreview()" -->>
+                <div  ng-controller="FriendController"
+                        ng-init="getCurrentUserFriendsListPreview()"
+                            ng-include="'templates/partial/friends-preview.html'"   >
                 </div>
             </div>
         </div>

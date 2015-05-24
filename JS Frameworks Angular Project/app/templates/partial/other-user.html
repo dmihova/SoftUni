@@ -1,0 +1,14 @@
+<div class="media-left profile-image-box" >
+    <img ng-src="{{otherUser.profileImageData}}" alt="picture"  >
+</div>
+<div class="media-body">
+    <h2> {{otherUser.name}} </h2>
+    <div class="status">
+        <button ng-if= "otherUser.status === 'friend'" disabled>Friend</button>
+        <button ng-if= "otherUser.status === 'sent'" disabled>Request sent</button>
+
+        <button ng-if= "otherUser.status === 'invite'" type="submit"  ng-click="sendRequest(otherUser)">Invite</button>
+
+
+    </div>
+</div>

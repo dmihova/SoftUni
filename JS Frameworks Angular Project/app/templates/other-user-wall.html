@@ -1,0 +1,26 @@
+<header header-directive=""></header>
+<main friend-controller-directive ng-init="getOtherUser()">
+    <div >
+        <div ng-style="{'background-image':'url(' + (otherUser.coverImageData ) +')'}"
+             ng-include="'templates/partial/other-user.html'">
+        </div>
+        <div>
+            <div >
+                <div>
+                    <div  ng-include="'templates/partial/wall-posts.html'"  >
+                        <!-- infinite-scroll='loadNewsFeed()' infinite-scroll-disabled='wallBusy' infinite-scroll-distance="0" >-->>
+
+                    </div>
+                </div>
+                <div  ng-controller="FriendController"
+                      ng-init="getOtherUserFriendsListPreview()"
+                      ng-include="'templates/partial/friends-preview.html'"   >
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+
+

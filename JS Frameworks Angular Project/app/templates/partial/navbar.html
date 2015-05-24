@@ -17,18 +17,18 @@
                     <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
                 </li>
 
-                <li ng-mouseenter="showRequestFlag=true" ng-mouseleave="showRequestFlag=false">
+                <li friend-controller-directive ng-mouseenter="showRequestFlag=true" ng-mouseleave="showRequestFlag=false" ng-init="getPendingRequests()">
                     <a href="#/friends/requests/" class="glyphicon glyphicon-user">
-                        <span ng-if="pendingRequests.length > 0" class="badge"> {{pendingRequests.length}}</span>
+                        <span ng-if="requests.length > 0" class="badge"> {{requests.length}}</span>
                     </a>
-                    <div id="friend-requests-box" ng-if="showRequestFlag && pendingRequests.length > 0" class="list-group">
-                        <div ng-repeat="request in pendingRequests" class="list-group-item">
-                            <a href="#/user/{{request.user.username}}/wall/">
-                                <img ng-src="{{request.user.profileImageData}}"  alt="picture" style="width: 50px; height: 50px"/>
+                    <div id="friend-requests-box" ng-if="showRequestFlag && requests.length > 0" class="list-group">
+                        <div ng-repeat="request in requests" class="list-group-item">
+                            <a href="#/users/{{request.user.username}}/">
+                                <img ng-src="{{request.user.profileImageData}}"  alt="picture" />
                                 <span>{{request.user.name}}</span>
                             </a>
-                            <button ng-click="acceptFriendRequest(request)" class="btn btn-success btn-sm">accept</button>
-                            <button ng-click="rejectFriendRequest(request)" class="btn btn-danger btn-sm">reject</button>
+                            <button ng-click="acceptRequest(request)" class="btn  btn-sm">accept</button>
+                            <button ng-click="rejectRequest(request)" class="btn  btn-sm">reject</button>
                         </div>
                     </div>
                 </li>
@@ -36,6 +36,23 @@
                 <li><a href="#/profile/edit"><span class="glyphicon glyphicon-cog"></span></a></li>
                 <li><a href="#/profile/password/"><span class="glyphicon glyphicon-lock"></span></a></li>
                 <li  ng-controller= 'MainController'  id="logout" ><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span></a></li>
+
+
+                <form  friend-controller-directive class="navbar-form navbar-right" id="search-user-form" >
+                    <div class="input-group">
+                        <input type="text" id="search-criteria" ng-model="searchCriteria"
+                                      ng-change="searchUserByCriteria()" >
+                    </div>
+
+                    <div ng-if="searchUserResults.length > 0" class="list-group">
+                        <div ng-repeat="user in searchUserResults" class="list-group-item">
+                            <a href="#/user/{{user.username}}/">
+                                <img ng-src="{{user.profileImageData}}" alt="picture"  class="small-profile-image-box"/>
+                                <span>{{user.name}}</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </ul>
         </div>
 

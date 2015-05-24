@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('authenticationService',
+app.factory('userService',
     function ($http, BASE_URL) {
         return {
             login: function(userData, success, error) {
@@ -27,8 +27,16 @@ app.factory('authenticationService',
                 }).error(error);
             },
 
-            logout: function() {
-                delete sessionStorage['currentUser'];
+            logout: function(success, error) {
+                var request = {
+                    method: 'POST',
+                    url: BASE_URL + 'users/logout',
+                    headers: this.getAuthHeaders()
+                };
+                $http(request).success(function(data) {
+                    delete sessionStorage['currentUser'];
+                    success(data);
+                }).error(error);
             },
 
             getCurrentUser : function() {
@@ -37,7 +45,13 @@ app.factory('authenticationService',
                     return JSON.parse(sessionStorage['currentUser']);
                 }
             },
-
+            getCurrentUserName : function() {
+                var userObject = sessionStorage['currentUser'];
+                if (userObject) {
+                    var jsonUsr =  JSON.parse(sessionStorage['currentUser']);
+                    return jsonUsr.userName;
+                }
+            },
              isLogged : function() {
                 return sessionStorage['currentUser'] != undefined;
             },
@@ -85,8 +99,25 @@ app.factory('authenticationService',
                     headers: this.getAuthHeaders()
                 };
                 $http(request).success(success).error(error);
+            },
+
+            searchUserByCriteria:function(searchTerm, success, error){
+                 var request = {
+                     method: 'GET',
+                     url: BASE_URL + 'users/search?searchTerm=' + searchTerm,
+                     headers: this.getAuthHeaders()
+                    };
+                 $http(request).success(success).error(error);
+              },
+            getFullUserData:function(name, success, error){
+                var request = {
+                    method: 'GET',
+                    url: BASE_URL + 'users/' + name,
+                    headers: this.getAuthHeaders()
+                };
+            $http(request).success(success).error(error);
             }
-        }
+        };
     }
 );
 

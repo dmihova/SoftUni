@@ -28,39 +28,9 @@ app.factory('profileService', function($http, $q, $resource, BASE_URL){
             return resource.query({ option1: option1});
         };
 
-        //Friends request
-        profile.getPendingRequests = function(){
-            return resource.query({ option1: 'requests' });
-        };
-        profile.acceptRequest = function(requestId){
-            var option2 = '' + requestId + '?status=approved';
-            return resource.edit({ option1: 'requests', option2: option2});
-        };
-        profile.rejectRequest = function(requestId){
-            var option2 = '' + requestId + '?status=rejected';
-            return resource.edit({ option1: 'requests', option2: option2});
-        };
-
-
-        // send request
-        profile.sendFriendRequest = function(username){
-            return resource.save({ option1: 'requests', option2: username});
-        };
-
-
-        //Friends list
-        profile.getFriendsList = function(){
-            return resource.query({ option1: 'friends'});
-        };
-
-        profile.getFriendsListPreview = function(){
-            return resource.get({ option1: 'friends', option2: 'preview'});
-        };
-
-
-
 
 
         return profile;
     }
 });
+

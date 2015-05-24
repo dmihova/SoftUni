@@ -1,23 +1,23 @@
-// The HomeController holds the presentation logic for the home screen and login/register
+// The HomeController holds the the home screen and login/register
 
-app.controller('MainController', function ($scope,$location,$routeParams,usSpinnerService,authenticationService,profileService,notifyService) {
+app.controller('MainController', function ($scope, $location, $routeParams, usSpinnerService, userService, profileService, notifyService) {
 
 
     function getReceivedRequests() {
-        if (authenticationService.isLogged()){
-            profileService(authenticationService.getAccessToken()).getPendingRequests().$promise.then(
-                function(data){
+        if (userService.isLogged()) {
+            profileService(userService.getAccessToken()).getPendingRequests().$promise.then(
+                function (data) {
                     $scope.pendingRequests = data;
                 }
             );
         }
     }
 
-    $scope.isLogged = function(){
-        return authenticationService.isLogged();
+    $scope.isLogged = function () {
+        return userService.isLogged();
     };
-    $scope.register = function(userData) {
-        authenticationService.register(userData,
+    $scope.register = function (userData) {
+        userService.register(userData,
             function success() {
                 notifyService.showInfo("User registered successfully");
                 $location.path("#/");
@@ -27,8 +27,8 @@ app.controller('MainController', function ($scope,$location,$routeParams,usSpinn
             }
         );
     };
-    $scope.login = function(userData) {
-        authenticationService.login(userData,
+    $scope.login = function (userData) {
+        userService.login(userData,
             function success() {
                 notifyService.showInfo("Login successful");
                 $location.path("#/");
@@ -38,16 +38,15 @@ app.controller('MainController', function ($scope,$location,$routeParams,usSpinn
             })
     };
 
-    $scope.logout = function(){
-        authenticationService.logout(
+    $scope.logout = function () {
+        userService.logout(
             function success() {
-                notifyService.showInfo('Goodbye!' );
+                notifyService.showInfo('Goodbye!');
                 $location.path('#/');
             }, function error(err) {
                 notifyService.showError("Logout failed", err);
             })
     };
-
 
 });
 

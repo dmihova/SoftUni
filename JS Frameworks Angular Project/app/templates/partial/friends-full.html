@@ -1,0 +1,15 @@
+<div >
+
+    <div  >
+        <label>Search by name</label>
+        <div >
+            <input type="text"  placeholder="friend name" ng-model="filterFriend.name">
+        </div>
+    </div>
+
+    <div  ng-repeat="friend in friendsData | filter:filterFriend">
+            <img ng-src="{{friend.profileImageData}}" alt="picture" title="{{friend.name}}"   class="profile-image-box"/>
+            <span>{{friend.name}}</span>
+
+    </div>
+</div>

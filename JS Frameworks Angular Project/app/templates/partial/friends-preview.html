@@ -1,1 +1,9 @@
-<h>Friends preview</h>
+<div class="panel pull-right panel-info" >
+    <div>Friends - <a href="{{friendsPreviewData.friendsUrl}}">{{friendsPreviewData.totalCount}} total</a></div>
+    <div class="panel-body" ng-repeat="friend in friendsPreviewData.friends">
+        <a href="#/users/{{friend.username}}/">
+            <img ng-src="{{friend.profileImageData}}" alt="picture" title="{{friend.name}}"   class="small-profile-image-box"/>
+            <span>{{friend.name}}</span>
+        </a>
+    </div>
+</div>

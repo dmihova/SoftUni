@@ -3,7 +3,7 @@ var app = angular.module('socialNetwork', [ 'ngRoute','ngResource','angularSpinn
 
 app.constant({
     'BASE_URL':'http://softuni-social-network.azurewebsites.net/api/',
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 6
   });
 
 
@@ -19,13 +19,22 @@ app.config(function($routeProvider  ) {
             templateUrl: 'templates/edit-profile.html',
             controller: 'ProfileController'
         })
+        .when('/users/:name/', {
+            templateUrl: 'templates/other-user-wall.html',
+            controller: 'FriendController'
+
+        })
+        .when('/users/:name/friends/', {
+            templateUrl: 'templates/friends.html',
+            controller: 'FriendController'
+        })
         .when('/news', {
             templateUrl: 'templates/news-feed.html',
             controller: 'ProfileController'
         })
         .when('/requests', {
             templateUrl: 'templates/friend-request.html',
-            controller: 'ProfileController'
+            controller: 'FriendController'
         })
 
 
