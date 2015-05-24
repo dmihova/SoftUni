@@ -1,16 +1,15 @@
 app.controller('PostController',
-    function ($scope, $location,usSpinnerService,
+    function ($scope, $location,$routeParams,usSpinnerService,
               postService,profileService, userService, notifyService,
               PAGE_SIZE  ) {
 
 
         $scope.addPost = function(){
             if(userService.isLogged()) {
-                $scope.post.username = $routeParams['username'];
+                 $scope.post.username = $routeParams['name'];
                  postService(userService.getAccessToken()).addPost($scope.post).$promise.then(
                     function(data){
-                        $scope.posts.unshift(data);
-                        $scope.post.postText = "";
+                        $scope.post.newPostText = "";
                         notifyService.showInfo("Post published.");
                      },
                     function(error){
@@ -51,5 +50,6 @@ app.controller('PostController',
                 );
             }
         };
-})
+
+    })
 ;

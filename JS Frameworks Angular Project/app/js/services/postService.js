@@ -2,10 +2,10 @@ app.factory('postService', function($http, $q, $resource, BASE_URL){
     return function(token){
         $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-        var post = {},
-            resource = $resource(
-                BASE_URL + 'Posts/:option1',
-                { option1: '@option1'  },
+        var post = {};
+        var  resource = $resource(
+                BASE_URL + 'posts/:option1',
+                { option1: '@option1'},
                 {
                     edit: {
                         method: 'PUT'
@@ -14,7 +14,11 @@ app.factory('postService', function($http, $q, $resource, BASE_URL){
             );
 
         post.addPost = function(postData){
-            return resource.save(postData);
+            var postPut = {
+                         'postContent': postData.newPostText,
+                         'username': postData.username
+                        };
+            return resource.save(postPut);
         };
         post.removePost = function(postId){
             return resource.remove({option1: postId});

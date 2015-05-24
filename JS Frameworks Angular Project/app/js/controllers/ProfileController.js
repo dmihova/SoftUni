@@ -84,6 +84,39 @@ app.controller('ProfileController',
             }
         };
 
+        $scope.getCurrentUserFeed = function(){
+            if(userService.isLogged()) {
+                 usSpinnerService.spin('spinner-1');
+                profileService(userService.getAccessToken()).getFeed(PAGE_SIZE, 0).$promise.then(
+                    function (data) {
+                        $scope.posts =data;
+                        usSpinnerService.stop('spinner-1');
+                    },
+                    function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        notifyService.showError("Failed to load news feed.", error);
+                    }
+                );
+            }
+        };
+        $scope.getOtherUserFeed = function(){
+            if(userService.isLogged()) {
+                usSpinnerService.spin('spinner-1');
+                profileService(userService.getAccessToken()).getFeedOtherUser($routeParams['name']).$promise.then(
+                    function (data) {
+                        $scope.posts =data;
+                        usSpinnerService.stop('spinner-1');
+                    },
+                    function (error) {
+                        usSpinnerService.stop('spinner-1');
+                        notifyService.showError("Failed to load news feed.", error);
+                    }
+                );
+            }
+        };
+
+
+
     });
 
 

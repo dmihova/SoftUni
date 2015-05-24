@@ -1,1 +1,16 @@
-<h>Post</h>
+<div ng-repeat="post in posts">
+    <div>
+
+            <div class="media-left small-profile-image-box">
+                <img ng-src="{{post.author.profileImageData}}"  alt="picture" />
+            </div>
+            <div class="media-body">
+                <span>{{post.author.name}} </span>
+                <span>{{post.date | date: "dd MMM yyyy HH:mm:ss"}}</span>
+            </div>
+             <br/>
+             <div class="media-body">
+                <p>{{post.postContent}}</p>
+             </div>
+    </div>
+</div>

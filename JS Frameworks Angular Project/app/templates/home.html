@@ -2,14 +2,14 @@
 
 <main>
     <div ng-if="!isLogged()">
-        <div >
-            <div class = "authHeader">
+        <div>
+            <div class="authHeader">
                 <h1> Welcome</h1>
             </div>
             <div class="login">
                 <p ng-include="'./templates/partial/login.html'"></p>
             </div>
-            <div class ="register" >
+            <div class="register">
                 <p ng-include="'./templates/partial/register.html'"></p>
             </div>
         </div>
@@ -17,22 +17,21 @@
 
 
     <div ng-if="isLogged()">
-        <div >
+        <div>
             <h1> News Feed</h1>
         </div>
-         <div>
-            <div >
-                <div>
-                    <div  ng-include="'templates/partial/wall-posts.html'"  >
-                        <!-- infinite-scroll='loadNewsFeed()' infinite-scroll-disabled='wallBusy' infinite-scroll-distance="0" >-->>
 
-                    </div>
-                </div>
-                <div  ng-controller="FriendController"
-                        ng-init="getCurrentUserFriendsListPreview()"
-                            ng-include="'templates/partial/friends-preview.html'"   >
-                </div>
-            </div>
-        </div>
+
+        <table>
+            <tr>
+                <td>
+                    <div ng-controller="ProfileController" ng-include="'templates/partial/wall-posts.html'" ng-init="getCurrentUserFeed()">    </div>
+                </td>
+                <td>
+                    <div ng-controller="FriendController"  ng-include="'templates/partial/friends-preview.html'" ng-init="getCurrentUserFriendsListPreview()" >  </div>
+                </td>
+            </tr>
+        </table>
     </div>
+
 </main>

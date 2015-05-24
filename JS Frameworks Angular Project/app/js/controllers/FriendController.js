@@ -156,7 +156,7 @@ app.controller('FriendController',
                              if (total > num) {
                                  data.friends.length = num;
                              }
-                             data.friendsUrl = '#/users/' + name + '/friends/';
+                             data.friendsUrl = '#/users/' + $routeParams.name + '/friends/';
                              $scope.friendsPreviewData = data;
                              usSpinnerService.stop('spinner-1');
                          },

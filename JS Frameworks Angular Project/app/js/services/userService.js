@@ -35,6 +35,7 @@ app.factory('userService',
                 };
                 $http(request).success(function(data) {
                     delete sessionStorage['currentUser'];
+                    $http.defaults.headers.common['Authorization'] = '';
                     success(data);
                 }).error(error);
             },

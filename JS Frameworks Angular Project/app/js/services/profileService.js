@@ -2,8 +2,8 @@ app.factory('profileService', function($http, $q, $resource, BASE_URL){
     return function(token){
         $http.defaults.headers.common['Authorization'] = 'Bearer ' + token;
 
-        var profile = {},
-            resource = $resource(
+        var profile = {};
+        var    resource = $resource(
                 BASE_URL + 'me/:option1/:option2',
                 { option1: '@option1', option2: '@option2' },
                 {
@@ -12,7 +12,15 @@ app.factory('profileService', function($http, $q, $resource, BASE_URL){
                     }
                 }
             );
-
+        var    resourceOther = $resource(
+            BASE_URL + 'users/:option1/:option2/:option3',
+            { option1: '@option1', option2: '@option2' },
+            {
+                edit: {
+                    method: 'PUT'
+                }
+            }
+        );
        // current user profile get and update
         profile.currentUser = function(){
             return resource.get();
@@ -22,13 +30,15 @@ app.factory('profileService', function($http, $q, $resource, BASE_URL){
         };
 
 
-        // Feed  - posts are in another service
-        profile.getNewsFeed = function(pageSize, startPostId){
-            var option1 = 'feed?StartPostId' + (startPostId ? "=" + startPostId : "") + "&PageSize=" + pageSize;
+        profile.getFeed = function(pageSize, startPostId){
+            var option1 = 'feed?' + "PageSize=" + pageSize;
+           /// StartPostId + (startPostId ? "=" + startPostId : "")
             return resource.query({ option1: option1});
         };
 
-
+        profile.getFeedOtherUser =function(Username){
+            return resourceOther.query({ option1: Username,option2: "wall",option3:"?PageSize=10"});
+        }
 
         return profile;
     }

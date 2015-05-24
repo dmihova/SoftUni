@@ -1,0 +1,6 @@
+<div class="panel pull-right panel-info" >
+    <form ng-controller="PostController"  ng-submit="addPost()" name ="newPost">
+        <textarea ng-model="post.newPostText"   required></textarea>
+        <button type="submit" ng-disabled="newPost.$invalid">Submit</button>
+    </form>
+ </div>

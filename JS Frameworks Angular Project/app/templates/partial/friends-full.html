@@ -8,8 +8,9 @@
     </div>
 
     <div  ng-repeat="friend in friendsData | filter:filterFriend">
+        <a href="#/users/{{friend.username}}/">
             <img ng-src="{{friend.profileImageData}}" alt="picture" title="{{friend.name}}"   class="profile-image-box"/>
             <span>{{friend.name}}</span>
-
+        </a>
     </div>
 </div>
